@@ -1,0 +1,329 @@
+:root {
+    --main-color: #d63a1e;
+    --highlight-color: #ff2d08;
+    --accent-color: lightgray;
+    --background-color: darkgray;
+    --border-color: #a5a1a1;
+    --dark-date: #142342;
+  
+    --right: #98dfbc;
+    --wrong: #bd4b4b;
+  }
+  
+  body {
+    background-color: var(--background-color);
+    position: relative;
+    text-align: center;
+    margin: auto;
+    font-family: 'Ubuntu', sans-serif;
+    overflow: overlay;
+  }
+  .dark-mode{
+    background: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4));
+  }
+  
+  .main{
+    margin-top: 5%;
+    float: left;
+    width: 60%;
+  }
+  
+  .history{
+    /* padding-top: 5%; */
+    width: 20%;
+    float: left;
+    height: 600px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  .hist-entry{
+    font-size: 15px;
+    width: 60%;
+    padding: 5px;
+    margin: 10px auto;
+    border: 1px solid var(--accent-color);
+    /* background-color: lightseagreen; */
+  }
+  .history h2{
+    background: var(--background-color);
+    padding-top: 5%;
+    padding-bottom: 5px;
+    border-bottom: 1px solid var(--accent-color);
+    width: 70%;
+    margin: auto;
+    position: sticky;
+    top: 0px;
+  }
+  .history #bottom-line{
+    border-bottom: 1px solid var(--accent-color);
+    width: 70%;
+    margin: auto;
+    position: sticky;
+    bottom: 0px;
+    /* display: none; */
+    /* padding: 10px; */
+    /* background-color: red; */
+  }
+  
+  
+  #title{
+    text-align: center;
+    margin: 10px auto 20px auto;
+    font-size: 60px;
+    color: var(--main-color);
+    -webkit-text-stroke: 1px var(--accent-color);
+    font-weight: bolder;
+  }
+  
+  
+  #navbar{  
+    display: block;
+    padding: 5% 0 0 0;
+    float: left;
+    width: 20%;
+    list-style-type: none;
+    text-align: left;
+    margin: 0;
+  }
+  #navbar .button{
+    cursor: pointer;
+  }
+  #navbar li{
+    margin: 5px 0;
+    width: 90%;
+    float: left;
+    background-color: #ffffff44;
+    text-align: center;
+    user-select: none;
+    color: var(--main-color);
+    font-size: 24px;
+    padding: 12px 16px;
+    font-weight: bolder;
+  }
+  #navbar .range{
+    float: right;
+    font-size: 20px;
+    max-width: 70px;
+  }
+  #hamburger{
+    display: none;
+  }
+  
+  #navbar .day-training{
+    float: left;
+    font-size: 20px;
+    max-width: 40px;
+    margin-left: 30px;
+  }
+  #navbar .game-modes{
+    text-align: right;
+  }
+  
+  
+  #buttons {
+    bottom: 10%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin-top: 5%;
+    list-style: none;
+    padding: 0;
+    z-index: 100;
+  }
+  
+  
+  a{
+    text-decoration: none;
+  }
+  
+  .control{
+    font-family: sans-serif;
+    padding: 8px;
+    background-color: var(--accent-color);
+    border-radius: 5px;
+    user-select: none;
+    font-size: 25px;
+    color: var(--main-color);
+    margin: 5px;
+    border: 0.5px solid var(--border-color);
+  }
+  
+  #answer{
+    bottom: 23%;
+    margin-top: 5%;
+    width: 55%;
+    margin: 4% auto;
+  }
+  
+  .radio-label{
+    display: inline-block;
+    /* width: 9em; */
+    padding: 10px;
+    margin: 5px 5px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: var(--main-color);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  #answer input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  #answer input:checked + .radio-label{
+    background-color: var(--highlight-color);
+    border: 1px solid var(--accent-color);
+    color: var(--accent-color);
+  }
+  
+  #date-display{
+    display: inline-block;
+    margin-top: 2%;
+    padding: 0 20px;
+    border: 2px solid var(--main-color);
+    background-color: var(--accent-color);
+    color: black;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  .dark-date{
+    background-color: var(--dark-date) !important;
+    color: lightgrey !important;
+  }
+  
+  .hide{
+    display: none;
+  }
+  
+  
+  
+  #navbar li a:active {
+    background-color: rgba(255, 255, 255, 0.582);
+  }
+  a li:active{
+    -webkit-text-stroke: 0.3px var(--accent-color);
+  }
+  .control:active {
+    background-color: var(--main-color);
+    cursor: pointer;
+    color: var(--accent-color);
+  }
+  
+  @media (hover: hover) {
+    #navbar .button:hover {
+      background-color: rgba(255, 255, 255, 0.582);
+    }
+    .control:hover {
+      background-color: var(--main-color);
+      cursor: pointer;
+      color: var(--accent-color);
+    }
+    #answer label:hover{
+      color: var(--highlight-color);
+      background-color: var(--accent-color);
+      border: 0.5px solid var(--border-color);
+    }
+  }
+  
+  
+  @media screen and (max-width: 700px){
+    /* * {
+      outline: 0.5px solid rgb(0, 38, 255) !important;
+    } */
+    #navbar{
+      display: none;
+      top: 0;
+      float: none;
+      padding-top: 0;
+      width: 90%;
+      margin: auto;
+    }
+    #hamburger{
+      margin-top: 3px;
+      width: 35px;
+      height: 35px;
+      background-image: url(menu.jpg);
+      background-size: 35px;
+      background-repeat: no-repeat;
+      display: inline-block;
+    }
+    #title{
+      font-size: 50px;
+      margin-top: 0;
+      margin-bottom: 5px;
+    }
+    .main{
+      width: 100%;
+      margin: auto;
+      margin-top: 0;
+    }
+    #date-display{
+      max-width: 80%;
+    }
+    #date-display h1{
+      font-size: 27px;
+    }
+    #answer{
+      width: 80%;
+    }
+    .control{
+      font-size: 22px;
+      padding: 5px;
+    }
+    .radio-label{
+      font-size: 20px;
+      padding: 5px;
+      margin: 4px;
+    }
+    .history{
+      /* position: fixed; */
+      bottom: 0;
+      height: 40%;
+      width: 100%;
+    }
+    .history h2{
+      padding-top: 30px;
+      background: none;
+    }
+    .history #bottom-line{
+      display: none;
+    }
+    #entries{
+      width: 100%;
+      white-space: nowrap;
+      overflow-x: auto;  
+    }
+    .hist-entry{
+      display: inline-block;
+      font-size: 12px;
+      width: 35%;
+      margin: 10px 5px;
+    }
+  }
+  @media screen and (max-width: 370px){
+    #title{
+      font-size: 36px;
+    }
+    #date-display{
+      width: 70%;
+    }
+    #date-display h1{
+      font-size: 20px;
+    }
+    .hist-entry{
+      width: 40%;
+    } 
+    #answer{
+      width: 90%;
+    }
+  }
+  
